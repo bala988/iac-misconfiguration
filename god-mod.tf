@@ -12,19 +12,24 @@ resource "aws_iam_policy" "example" {
   name = "noncompliantpolicy"
 
   policy = jsonencode({
-    Version   = "2012-10-17"
+    Version = "2012-10-17"
     Statement = [
       {
-        Action   = [
+        Action = [
           "*" # Sensitive
         ]
-        Effect   = "Allow"
+        Effect = "Allow"
         Resource = [
           aws_s3_bucket.mybucket.arn
         ]
       }
     ]
   })
+  tags = {
+    git_org   = "bala988"
+    git_repo  = "iac-misconfiguration"
+    yor_trace = "a1877708-7a11-4363-bfa1-1cea9c935dc9"
+  }
 }
 
 # GCP
