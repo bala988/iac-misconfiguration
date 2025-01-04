@@ -1,2 +1,0 @@
-# iac-misconfiguration
-misconfiguration sample
